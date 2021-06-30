@@ -21,19 +21,20 @@ require_once 'includes/http.php';
 
 // Index page
 $app->get('/', function ($request, $response) use ($app, $prismic) {
+  $api = $prismic->get_api();
   
   // Query the homepage content
-  $api = $prismic->get_api();
-  $pageContent = $api->getSingle('homepage');
+  $introducao = $api->query(Predicates::at('document.type', 'introducao'))->results[0];
+  $tratamentos = $api->query(Predicates::at('document.type', 'tratamento'))->results;
   
   // Query the menu content
-  $menuContent = $api->getSingle('menu');
-  if (!$menuContent) {
-    $menuContent = null;
-  }
+  // $menuContent = $api->getSingle('menu');
+  // if (!$menuContent) {
+  //   $menuContent = null;
+  // }
   
   // Render the homepage
-  render($app, 'homepage', array('menuContent' => $menuContent));
+  render($app, 'homepage', array('introducao' => $introducao, 'tratamentos' => $tratamentos));
 });
 
 // Previews

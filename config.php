@@ -9,14 +9,14 @@
 /*
  * Change this for the URL of your repository.
  */
-define('PRISMIC_URL', 'https://your-repo-name.prismic.io/api/v2');
+define('PRISMIC_URL', 'https://aquarela.prismic.io/api/v2');
 define('PRISMIC_TOKEN', null);
 
 /*
  * Your site metadata
  */
-define('SITE_TITLE', 'Sample Website');
-define('SITE_DESCRIPTION', 'This is a sample website using prismic.io');
+define('SITE_TITLE', 'Aquarela Odontologia Digital');
+define('SITE_DESCRIPTION', 'Aquarela Odontologia Digital');
 
 /*
  * Set to true to display error details

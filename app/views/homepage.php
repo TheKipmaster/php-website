@@ -3,8 +3,8 @@ use Prismic\Dom\Link;
 use Prismic\Dom\RichText;
 
 $prismic = $WPGLOBAL['prismic'];
-$pageContent = $WPGLOBAL['pageContent'];
-$menuContent = $WPGLOBAL['menuContent'];
+$introducao = $WPGLOBAL['introducao'];
+$tratamentos = $WPGLOBAL['tratamentos'];
 
 $title = SITE_TITLE;
 $isHomepage = true;
@@ -98,39 +98,39 @@ $isHomepage = true;
 
     <section class="intro" id="intro">
       <h1>
-        <%= PrismicDOM.RichText.asText(intro.data.title) %>
+        <?= RichText::asText($introducao->data->title) ?>
       </h1>
       <h2>
-        <%= PrismicDOM.RichText.asText(intro.data.subtitle) %>
+        <?= RichText::asText($introducao->data->subtitle) ?>
       </h2>
       <p>
-        <%= PrismicDOM.RichText.asText(intro.data.body) %>
+        <?= RichText::asText($introducao->data->body) ?>
       </p>
 
       <div class="stars">
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star1 %></span>
+          <span><?= $introducao->data->star1 ?></span>
         </div>
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star2 %></span>
+          <span><?= $introducao->data->star2 ?></span>
         </div>
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star3 %></span>
+          <span><?= $introducao->data->star3 ?></span>
         </div>
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star4 %></span>
+          <span><?= $introducao->data->star4 ?></span>
         </div>
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star5 %></span>
+          <span><?= $introducao->data->star5 ?></span>
         </div>
         <div class="star">
           <div class="star-icon"><img src="/images/star.png" alt=""></div>
-          <span><%= intro.data.star6 %></span>
+          <span><?= $introducao->data->star6 ?></span>
         </div>
       </div>
 
@@ -183,12 +183,12 @@ $isHomepage = true;
       <h1>Tratamentos</h1>
 
       <div class="gallery js-flickity">
-        <% treatments.map(treatment => { %>
-          <a href="<%= treatment.data.link.url %>" class="gallery-cell">
-            <img src="<%= treatment.data.picture.url %>" alt="<%= PrismicDOM.RichText.asText(treatment.data.name) %>"></img>
-            <button><%= PrismicDOM.RichText.asText(treatment.data.name) %></button>
+        <?php foreach ($tratamentos as $treatment): ?>
+          <a href="<?= $treatment->data->link->url ?>" class="gallery-cell">
+            <img src="<?= $treatment->data->picture->url ?>" alt="<?= RichText::asText($treatment->data->name) ?>"></img>
+            <button><?= RichText::asText($treatment->data->name) ?></button>
           </a>
-        <% }) %>
+        <?php endforeach ?>
       </div>
 
       <a class="callout" href="https://api.whatsapp.com/send?phone=556191875504&text=Ol%C3%A1!%20Sou%20-%2C %20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20-">
