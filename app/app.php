@@ -25,10 +25,6 @@ $app->get('/', function ($request, $response) use ($app, $prismic) {
   // Query the homepage content
   $api = $prismic->get_api();
   $pageContent = $api->getSingle('homepage');
-  if (!$pageContent || $pageContent->data == new stdClass() ) {
-    include '../app/includes/templates/firstrun.php';
-    return;
-  }
   
   // Query the menu content
   $menuContent = $api->getSingle('menu');
@@ -37,7 +33,7 @@ $app->get('/', function ($request, $response) use ($app, $prismic) {
   }
   
   // Render the homepage
-  render($app, 'homepage', array('pageContent' => $pageContent, 'menuContent' => $menuContent));
+  render($app, 'homepage', array('menuContent' => $menuContent));
 });
 
 // Previews
