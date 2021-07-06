@@ -308,7 +308,7 @@ nav {
     align-items: center;
     flex: 3;
     color: #37659B;
-    background: no-repeat center/90% url("../../images/phone.png"); }
+    background: no-repeat center/90% url("/public/images/phone.png"); }
     .different .phone h2 {
       padding: 0 2.5em;
       margin: 2em 0 0.5em 0;
@@ -636,4 +636,4 @@ nav {
   nav .not-logo .contact i {
     display: none; }
   .different .phone {
-    background: no-repeat center/100% url("../../images/phone.png"); } }
+    background: no-repeat center/100% url("/public/images/phone.png"); } }

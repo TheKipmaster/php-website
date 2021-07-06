@@ -29,9 +29,9 @@ $isHomepage = true;
     <!-- <link href="/stylesheets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
     <!-- Carousel styles -->
-    <link rel="stylesheet" href="/javascript/flickity.min.css">
+    <link rel="stylesheet" href="/public/javascript/flickity.min.css">
 
     <!-- Minified CSS -->
     <!-- <link rel="stylesheet" href="/stylesheets/index-5c180860b116b1aa8b39110c82abab73.min.css"> -->
@@ -63,7 +63,7 @@ $isHomepage = true;
 
     <nav>
       <div class="logo">
-        <img src="/images/logo-cabeçalho.png" alt="">
+        <img src="/public/images/logo-cabecalho.png" alt="">
       </div>
       <div class="not-logo">
         <div class="contact">
@@ -109,27 +109,27 @@ $isHomepage = true;
 
       <div class="stars">
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star1 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star2 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star3 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star4 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star5 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
           <span><?= $introducao->data->star6 ?></span>
         </div>
       </div>
@@ -146,19 +146,19 @@ $isHomepage = true;
 
       <div class="compliments">
         <div class="compliment">
-          <div class="compliment-icon"><img src="/images/melhores-profissionais.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/melhores-profissionais.png" alt=""></div>
           <span>Os Melhores Profissionais</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/images/tecnologia-de-ponta.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/tecnologia-de-ponta.png" alt=""></div>
           <span>Tecnologia de Ponta</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/images/tratamento-personalizado.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/tratamento-personalizado.png" alt=""></div>
           <span>Tratamento Personalizado</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/images/melhor-localização.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/melhor-localizacaoo.png" alt=""></div>
           <span>Melhor Localização</span>
         </div>
       </div>
@@ -211,25 +211,25 @@ $isHomepage = true;
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/images/location.png" alt="">
+            <img src="/public/images/location.png" alt="">
           </div>
           <span>Localização privilegiada no coração de Brasília e Taguatinga!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/images/shield.png" alt="">
+            <img src="/public/images/shield.png" alt="">
           </div>
           <span>Transparência, confiança e eficiência. Há 31 anos transformando sorrisos!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/images/heart.png" alt="">
+            <img src="/public/images/heart.png" alt="">
           </div>
           <span>Atendimento humanizado e personalizado!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/images/tech.png" alt="">
+            <img src="/public/images/tech.png" alt="">
           </div>
           <span>Tecnologia de ponta!</span>
         </div>
@@ -249,7 +249,7 @@ $isHomepage = true;
       <div class="members">
         <div class="member">
           <div class="image">
-            <img src="/images/jessica.jpg" alt="">
+            <img src="/public/images/jessica.jpg" alt="">
           </div>
           <span>
             Dra. Jéssica Campos<br>
@@ -259,7 +259,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/bruno.jpg" alt="">
+            <img src="/public/images/bruno.jpg" alt="">
           </div>
           <span>
             Dr. Bruno Franzão<br>
@@ -269,7 +269,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/Mylene.png" alt="">
+            <img src="/public/images/Mylene.png" alt="">
           </div>
           <span>
             Dra. Mylene Monteiro<br>
@@ -279,7 +279,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/antonio.jpg" alt="">
+            <img src="/public/images/antonio.jpg" alt="">
           </div>
           <span>
             Dr. Antônio Carlos<br>
@@ -289,7 +289,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/paulo.jpg" alt="">
+            <img src="/public/images/paulo.jpg" alt="">
           </div>
           <span>
             Dr. Paulo Nagata<br>
@@ -299,7 +299,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/claudia.jpg" alt="">
+            <img src="/public/images/claudia.jpg" alt="">
           </div>
           <span>
             Dra. Cláudia Honda<br>
@@ -309,7 +309,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/images/claudio.jpg" alt="">
+            <img src="/public/images/claudio.jpg" alt="">
           </div>
           <span>
             Dr. Claudio Sesso<br>
@@ -346,19 +346,19 @@ $isHomepage = true;
 
       <div class="gallery js-flickity">
         <a href="" class="gallery-cell">
-          <img src="/images/claudia.jpeg" alt="Invisalign"></img>
+          <img src="/public/images/claudia.jpeg" alt="Invisalign"></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/images/rodrigo.jpeg" alt="odontopediatria"></img>
+          <img src="/public/images/rodrigo.jpeg" alt="odontopediatria"></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/images/leidiane.jpeg" alt="Aparelhos Transparentes"></img>
+          <img src="/public/images/leidiane.jpeg" alt="Aparelhos Transparentes"></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/images/leticia.jpeg" alt="Restaurações Estéticas"></img>
+          <img src="/public/images/leticia.jpeg" alt="Restaurações Estéticas"></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/images/magda.jpeg" alt="Restaurações Estéticas"></img>
+          <img src="/public/images/magda.jpeg" alt="Restaurações Estéticas"></img>
         </a>
       </div>
 
@@ -379,7 +379,7 @@ $isHomepage = true;
         <div class="find-us">
           <div class="side">
             <div class="image">
-              <img src="/images/location-red.png" alt="">
+              <img src="/public/images/location-red.png" alt="">
             </div>
             <span>Brasília Shopping</span>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122858.49615481742!2d-47.959296841796885!3d-15.786649499999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3afbd1b8536d%3A0x818bfe00f882bb8c!2sBras%C3%ADlia%20Shopping!5e0!3m2!1sen!2sbr!4v1623960234964!5m2!1sen!2sbr"
@@ -389,14 +389,14 @@ $isHomepage = true;
           <div class="middle">
             <h1>Nos Encontre</h1>
             <div class="image">
-              <img src="/images/atention.png" alt="">
+              <img src="/public/images/atention.png" alt="">
             </div>
             <span>Não atendemos convênio. <br> Somente particular</span>
           </div>
 
           <div class="side">
             <div class="image">
-              <img src="/images/location-red.png" alt="">
+              <img src="/public/images/location-red.png" alt="">
             </div>
             <span>Taguatinga Trade Center</span>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.4719128768743!2d-48.05458588555419!3d-15.831775528092178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bd2af935d9b05%3A0x6764779fe92867e4!2sTrade%20Center%20Taguatinga!5e0!3m2!1sen!2sbr!4v1623960263893!5m2!1sen!2sbr"
@@ -408,8 +408,8 @@ $isHomepage = true;
 
   </body>
   <!-- Carousel JS -->
-  <script src="/javascript/flickity.pkgd.min.js"></script>
-  <script src="/javascript/main.js"></script>
+  <script src="/public/javascript/flickity.pkgd.min.js"></script>
+  <script src="/public/javascript/main.js"></script>
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/af6a9f2a9f.js" crossorigin="anonymous"></script>
 </html>
