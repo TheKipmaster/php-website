@@ -4,7 +4,7 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: Lato, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 35px;
   font-weight: 400;
@@ -12,69 +12,124 @@ body {
   color: #516677; }
 
 #sidebarMenu {
+  display: block;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  width: 250px;
+  z-index: 98;
+  transform: translateX(250px);
+  transition: transform 250ms ease-in-out;
+  background-color: #737373; }
+  #sidebarMenu .sidebarMenuInner {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(47, 148, 142, 0.1); }
+    #sidebarMenu .sidebarMenuInner li {
+      list-style: none;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 18px;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(47, 148, 142, 0.1); }
+      #sidebarMenu .sidebarMenuInner li a {
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none; }
+
+input[type=checkbox] {
+  transition: all 0.3s;
+  box-sizing: border-box;
   display: none; }
+  input[type=checkbox]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+    position: fixed; }
+  input[type=checkbox]:checked ~ .sidebarIconToggle .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0; }
+  input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 15px; }
+  input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -15px; }
 
 .sidebarIconToggle {
-  display: none; }
-
-.openSidebarMenu {
-  display: none; }
+  display: block;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+  top: 35px;
+  right: 25px;
+  height: 30px;
+  width: 30px; }
+  .sidebarIconToggle .spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background-color: #fff; }
+    .sidebarIconToggle .spinner.horizontal {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 5px; }
+    .sidebarIconToggle .spinner.diagonal.part-1 {
+      position: relative;
+      transition: all 0.3s;
+      box-sizing: border-box;
+      float: left; }
+    .sidebarIconToggle .spinner.diagonal.part-2 {
+      transition: all 0.3s;
+      box-sizing: border-box;
+      position: relative;
+      float: left;
+      margin-top: 5px; }
 
 nav {
   display: flex;
   flex-direction: row;
-  background-color: #D3E4D8;
-  padding: 1em 0.5em;
-  height: 25vh; }
+  background-color: #737373;
+  align-items: center;
+  color: white;
+  height: 15vh; }
   nav .logo {
-    flex: 1; }
+    height: 15vh;
+    margin-right: 12em; }
     nav .logo img {
       height: 100%; }
-  nav .not-logo {
+  nav i {
+    font-size: 3em;
+    align-self: center;
+    text-align: center; }
+  nav .phone-number {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    flex: 5; }
-    nav .not-logo .contact {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      color: #379B56; }
-      nav .not-logo .contact i {
-        flex: 1;
-        font-size: 5em;
-        align-self: center;
-        text-align: center; }
-      nav .not-logo .contact .phone-numbers {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        flex: 3; }
-        nav .not-logo .contact .phone-numbers div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          font-weight: bold; }
-          nav .not-logo .contact .phone-numbers div .location {
-            color: #37659B;
-            font-size: 1.5em; }
-          nav .not-logo .contact .phone-numbers div .number {
-            font-size: 2.5em;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #379B56;
-            cursor: default; }
-    nav .not-logo .navigation {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 2em; }
-      nav .not-logo .navigation a {
-        text-decoration: none;
-        color: #737373; }
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.75em;
+    margin-left: 2em; }
+    nav .phone-number .location {
+      font-size: 1.5em; }
+    nav .phone-number .number {
+      font-size: 2.5em;
+      text-decoration: none;
+      color: white;
+      cursor: default; }
 
 .intro {
   display: flex;
@@ -89,17 +144,17 @@ nav {
     line-height: initial;
     margin: 15px 0; }
   .intro h2 {
-    color: #37659B;
+    color: #008037;
     margin: 0;
     font-size: 1.8em; }
   .intro p {
     text-align: justify;
     font-size: 2em;
-    line-height: initial; }
+    line-height: 1.5em; }
   .intro .stars {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    column-gap: 4em;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+    column-gap: 1em;
     row-gap: 1em;
     width: 100%;
     font-size: 1.5em; }
@@ -129,11 +184,12 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 80%; }
+  width: 100%; }
   .signboard .whatsapp {
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: space-between;
     flex: 1;
     text-align: center;
     line-height: 1.3em;
@@ -141,8 +197,8 @@ nav {
     text-decoration: none;
     color: #737373; }
     .signboard .whatsapp i {
-      color: #379B56;
-      font-size: 5em;
+      color: #008037;
+      font-size: 4em;
       align-self: center; }
   .signboard .sign {
     display: flex;
@@ -155,8 +211,8 @@ nav {
     line-height: 1.5em;
     border-radius: 20px 20px 0 0; }
     .signboard .sign .neon {
-      color: #379B56;
-      text-shadow: 0 0 10px #379B56, 0 0 21px #379B56; }
+      color: #427bbd;
+      text-shadow: 0 0 10px #427bbd, 0 0 21px #427bbd; }
 
 .call-to-action {
   display: flex;
@@ -166,10 +222,10 @@ nav {
   margin-top: 2em;
   width: 100%; }
   .call-to-action .callout {
-    color: #379B56;
+    color: #427bbd;
     text-align: center;
     font-size: 1.5em;
-    text-shadow: 0 0 10px #379B56, 0 0 21px #379B56;
+    text-shadow: 0 0 10px #427bbd, 0 0 21px #427bbd;
     background-color: #545454;
     border-radius: 20px 20px 0 0;
     width: fit-content;
@@ -179,22 +235,27 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
-    background-color: #37659B;
+    background-color: #008037;
     border-radius: 20px;
     padding: 2em 0;
     margin-bottom: 2em; }
-    .call-to-action .form input {
+    .call-to-action .form input, .call-to-action .form select {
+      background-color: white;
+      color: #737373;
       font-size: 1.5em;
       text-align: center;
       padding: 0.5em 0;
       width: 20%;
+      text-align-last: center;
       border: none;
       border-radius: 10px; }
+      .call-to-action .form input option, .call-to-action .form select option {
+        color: #737373; }
     .call-to-action .form button {
       width: 20%;
       font-size: 1.5em;
       color: white;
-      background-color: #379B56;
+      background-color: #37659B;
       border: none;
       border-radius: 10px;
       cursor: pointer; }
@@ -205,7 +266,7 @@ nav {
   background-color: #D3E4D8;
   padding-bottom: 2em; }
   .treatments h1 {
-    color: #379B56;
+    color: #008037;
     text-align: center;
     font-size: 3.5em;
     line-height: initial;
@@ -217,7 +278,7 @@ nav {
     padding: 0.5em;
     border: none;
     border-radius: 15px;
-    background-color: #379B56;
+    background-color: #008037;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -241,7 +302,7 @@ nav {
       border-radius: 15px; }
     .gallery .gallery-cell button {
       width: 90%;
-      background-color: #379B56;
+      background-color: #008037;
       color: white;
       margin-top: 1em;
       border: none;
@@ -267,11 +328,12 @@ nav {
     display: flex;
     flex-direction: column;
     margin-top: 2em;
-    flex: 5; }
+    flex: 5;
+    padding: 0 0 0 2em; }
     .different .left .top {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: space-between;
       text-align: center; }
       .different .left .top h2 {
         margin: 0;
@@ -280,12 +342,13 @@ nav {
       .different .left .top .whatsapp {
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
         cursor: pointer;
         text-decoration: none;
         color: #737373; }
         .different .left .top .whatsapp i {
           font-size: 2.5em;
-          color: #379B56; }
+          color: #008037; }
         .different .left .top .whatsapp span {
           font-size: 1rem;
           line-height: 1rem; }
@@ -308,12 +371,13 @@ nav {
     align-items: center;
     flex: 3;
     color: #37659B;
-    background: no-repeat center/90% url("/public/images/phone.png"); }
+    background: no-repeat center/90% url("../images/phone.png"); }
     .different .phone h2 {
-      padding: 0 2.5em;
+      font-size: 1.3em;
+      padding: 0 1.5em;
       margin: 2em 0 0.5em 0;
       text-align: center; }
-    .different .phone input {
+    .different .phone input, .different .phone select {
       background-color: #E5E9ED;
       color: #37659B;
       height: 2em;
@@ -321,16 +385,17 @@ nav {
       margin: 0.5em 0;
       border-radius: 15px;
       border: none;
+      text-align-last: center;
       text-align: center;
       font-size: 1em; }
-      .different .phone input::placeholder {
+      .different .phone input::placeholder, .different .phone select::placeholder {
         color: #37659B;
         text-align: center;
         line-height: normal; }
     .different .phone button {
       border: none;
       border-radius: 15px;
-      background-color: #379B56;
+      background-color: #008037;
       color: white;
       font-size: 1em;
       padding: 0.5em 1em; }
@@ -343,7 +408,7 @@ nav {
   font-size: 1em;
   background-color: #D3E4D8; }
   .team h1 {
-    color: #379B56;
+    color: #008037;
     font-size: 3.5em; }
   .team .members {
     display: flex;
@@ -361,7 +426,7 @@ nav {
         flex: 2; }
         .team .members .member .image img {
           border-radius: 15px;
-          border: 5px #379B56 solid;
+          border: 5px #008037 solid;
           width: 100%; }
       .team .members .member span {
         flex: 1;
@@ -375,10 +440,11 @@ nav {
     margin-top: 2em; }
     .team .container .callout {
       background-color: #37659B;
-      color: #379B56;
+      color: #00ad4b;
       font-size: 1.5em;
       padding: 0 2em;
-      border-radius: 15px 15px 0 0; }
+      border-radius: 15px 15px 0 0;
+      text-shadow: 0 0 10px #00ad4b, 0 0 21px #00ad4b; }
 
 .testimonies {
   background-color: #E5E9ED;
@@ -393,7 +459,7 @@ nav {
     flex-direction: column;
     align-items: center; }
     .testimonies .footer .more-testimonies {
-      background-color: #379B56;
+      background-color: #008037;
       color: white;
       font-size: 1.5em;
       padding: 0.5em 1.5em;
@@ -404,8 +470,8 @@ nav {
       cursor: pointer; }
     .testimonies .footer .call-to-action .callout {
       padding: 0.5em 2em;
-      color: #379B56;
-      text-shadow: 0 0 10px #379B56, 0 0 21px #379B56; }
+      color: #00ad4b;
+      text-shadow: 0 0 10px #00ad4b, 0 0 21px #00ad4b; }
     .testimonies .footer .find-us {
       display: flex;
       flex-direction: row; }
@@ -436,7 +502,57 @@ nav {
           font-size: 1em;
           text-align: center; }
 
-@media (max-width: 480px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 14px; }
+  .gallery .gallery-cell {
+    width: 80%; }
+  .gallery .flickity-prev-next-button {
+    display: none; }
+  .sidebarIconToggle {
+    top: 42px; }
+  .signboard {
+    width: 100%; }
+    .signboard .sign {
+      font-size: 2em; }
+  nav {
+    height: fit-content; }
+    nav .logo {
+      height: 8em;
+      margin: 0; }
+  .intro p {
+    width: 90%; }
+  .intro .compliments .compliment .compliment-icon {
+    font-size: 1.5em; }
+  .intro .compliments .compliment span {
+    font-size: 1em; }
+  .intro .stars {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    font-size: 1.5em;
+    width: 95%; }
+  .different {
+    flex-direction: column;
+    align-items: center; }
+    .different .left {
+      padding: 0 2em; }
+    .different .phone {
+      height: 485px;
+      width: 50%; }
+  .team .members {
+    font-size: 1.3em;
+    width: 100%; }
+  .testimonies .footer .find-us {
+    flex-direction: column; }
+    .testimonies .footer .find-us .middle span {
+      font-size: 2em; }
+    .testimonies .footer .find-us .side span {
+      font-size: 2em; }
+    .testimonies .footer .find-us .side iframe {
+      width: 35em; } }
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px; }
   .gallery .gallery-cell {
     width: 80%; }
   .gallery .flickity-prev-next-button {
@@ -444,131 +560,66 @@ nav {
   .signboard {
     width: 100%;
     align-items: center; }
+    .signboard .whatsapp i {
+      margin-bottom: 10px; }
     .signboard .sign {
       text-align: center;
       font-size: 2em;
       line-height: inherit;
       height: 100%; }
-  #sidebarMenu {
-    display: block;
-    height: 100%;
-    position: fixed;
-    right: 0;
-    width: 250px;
-    z-index: 98;
-    transform: translateX(250px);
-    transition: transform 250ms ease-in-out;
-    background-color: #37659B; }
-    #sidebarMenu .sidebarMenuInner {
-      margin: 0;
-      padding: 0;
-      border-top: 1px solid rgba(47, 148, 142, 0.1); }
-      #sidebarMenu .sidebarMenuInner li {
-        list-style: none;
-        color: #fff;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 18px;
-        cursor: pointer;
-        border-bottom: 1px solid rgba(47, 148, 142, 0.1); }
-        #sidebarMenu .sidebarMenuInner li a {
-          color: #fff;
-          text-transform: uppercase;
-          font-weight: bold;
-          cursor: pointer;
-          text-decoration: none; }
-  input[type=checkbox] {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    display: none; }
-    input[type=checkbox]:checked ~ #sidebarMenu {
-      transform: translateX(0);
-      position: fixed; }
-    input[type=checkbox]:checked ~ .sidebarIconToggle .horizontal {
-      transition: all 0.3s;
-      box-sizing: border-box;
-      opacity: 0; }
-    input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-1 {
-      transition: all 0.3s;
-      box-sizing: border-box;
-      transform: rotate(135deg);
-      margin-top: 8px; }
-    input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-2 {
-      transition: all 0.3s;
-      box-sizing: border-box;
-      transform: rotate(-135deg);
-      margin-top: -9px; }
+  input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-1 {
+    margin-top: 8px; }
+  input[type=checkbox]:checked ~ .sidebarIconToggle .diagonal.part-2 {
+    margin-top: -9px; }
   .sidebarIconToggle {
-    display: block;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    height: 100%;
-    width: 100%;
-    top: 28px;
+    top: 23px;
     right: 15px;
     height: 22px;
     width: 22px; }
     .sidebarIconToggle .spinner {
-      transition: all 0.3s;
-      box-sizing: border-box;
-      position: absolute;
-      height: 3px;
-      width: 100%;
-      background-color: #fff; }
+      height: 3px; }
       .sidebarIconToggle .spinner.horizontal {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        position: relative;
-        float: left;
         margin-top: 3px; }
-      .sidebarIconToggle .spinner.diagonal.part-1 {
-        position: relative;
-        transition: all 0.3s;
-        box-sizing: border-box;
-        float: left; }
       .sidebarIconToggle .spinner.diagonal.part-2 {
-        transition: all 0.3s;
-        box-sizing: border-box;
-        position: relative;
-        float: left;
         margin-top: 3px; }
   nav {
-    font-size: 0.33em;
+    font-size: 0.4em;
     height: fit-content;
     align-items: center; }
     nav .logo {
-      height: 10em; }
-    nav .not-logo .contact i {
-      flex: none; }
-    nav .not-logo .contact .phone-numbers {
-      flex: none; }
-      nav .not-logo .contact .phone-numbers div {
-        margin: 0 1em; }
-        nav .not-logo .contact .phone-numbers div .number {
-          margin: 0;
-          line-height: normal; }
-        nav .not-logo .contact .phone-numbers div .location {
-          line-height: normal; }
-    nav .not-logo .navigation {
-      display: none; }
+      height: 10em;
+      margin: 0; }
+    nav i {
+      flex: none;
+      font-size: 5em; }
+    nav .phone-number {
+      margin: 0 1em;
+      font-size: 1em; }
+      nav .phone-number .number {
+        margin: 0;
+        line-height: normal; }
+      nav .phone-number .location {
+        line-height: normal; }
   .intro {
     padding: 0;
     font-size: 0.5em; }
     .intro p {
-      margin: 0 10px; }
+      width: 85%; }
+    .intro h1 {
+      margin-bottom: 0; }
+    .intro h2 {
+      margin-bottom: 1em; }
     .intro .stars {
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       grid-gap: 0;
-      font-size: 1.3em; }
+      font-size: 1.3em;
+      width: 90%; }
     .intro .call-to-action .callout {
       line-height: normal; }
     .intro .compliments {
       flex-wrap: wrap; }
       .intro .compliments .compliment {
-        flex: 1; }
+        width: 50%; }
         .intro .compliments .compliment .compliment-icon img {
           height: 11em; }
         .intro .compliments .compliment span {
@@ -581,27 +632,32 @@ nav {
   .different {
     font-size: 0.5em;
     flex-direction: column; }
-    .different .left .top {
-      align-items: center; }
-      .different .left .top h2 {
-        font-size: 3.5em; }
-    .different .left .item {
-      align-items: center;
-      flex-direction: column; }
-      .different .left .item .icon {
-        display: flex;
-        justify-content: center;
+    .different .left {
+      padding: 0; }
+      .different .left .top {
         align-items: center; }
-        .different .left .item .icon img {
-          width: 20%; }
-      .different .left .item span {
-        font-size: 2em;
-        text-align: center; }
+        .different .left .top h2 {
+          font-size: 3.5em; }
+      .different .left .item {
+        align-items: center;
+        flex-direction: column; }
+        .different .left .item .icon {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .different .left .item .icon img {
+            width: 20%; }
+        .different .left .item span {
+          font-size: 2em;
+          text-align: center; }
     .different .phone {
-      height: 475px;
+      height: 500px;
       font-size: 1rem;
       flex: none; }
-      .different .phone input {
+      .different .phone h2 {
+        padding: 0 3em;
+        margin-top: 3em; }
+      .different .phone input, .different .phone select {
         width: 15em; }
   .team {
     font-size: 0.5em;
@@ -633,7 +689,7 @@ nav {
         font-size: 2em; } }
 
 @media (max-width: 400px) {
-  nav .not-logo .contact i {
+  nav i.fas.fa-phone-alt {
     display: none; }
   .different .phone {
-    background: no-repeat center/100% url("/public/images/phone.png"); } }
+    background: no-repeat center/100% url("../images/phone.png"); } }

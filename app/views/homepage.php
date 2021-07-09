@@ -25,19 +25,24 @@ $isHomepage = true;
 
     <title>Aquarela Odontologia Digital</title>
 
+    <!-- Monserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <!-- Bootstrap Core CSS -->
     <!-- <link href="/stylesheets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+    <!-- <link rel="stylesheet" href="/public/stylesheets/style.css" /> -->
     <!-- Carousel styles -->
     <link rel="stylesheet" href="/public/javascript/flickity.min.css">
 
     <!-- Minified CSS -->
-    <!-- <link rel="stylesheet" href="/stylesheets/index-5c180860b116b1aa8b39110c82abab73.min.css"> -->
+    <link rel="stylesheet" href="/public/stylesheets/style.min.css" />
 
     <!-- Page Icon -->
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="/img/title-logo.png" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo-icone.png" />
 
   </head>
 
@@ -63,36 +68,16 @@ $isHomepage = true;
 
     <nav>
       <div class="logo">
-        <img src="/public/images/logo-cabecalho.png" alt="">
+        <img src="/public/images/logo-cabecalho.png" alt="Aquarela Ortodontia">
       </div>
-      <div class="not-logo">
-        <div class="contact">
-          <i class="fas fa-phone-alt"></i>
-          <div class="phone-numbers">
-            <div>
-              <span class="location">Brasília Shppping</span>
-              <a class="number" href="tel:+55-61-3327-0523">(61) 3327-0523</a>
-            </div>
-            <div>
-              <span class="location">Taguatinga</span>
-              <a class="number" href="tel:+55-61-3352-5735">(61) 3352-5735</a>
-            </div>
-          </div>
-        </div>
-        <ul class="navigation">
-          <a href="#treatments">
-            <li>Tratamentos</li>
-          </a>
-          <a href="#different">
-            <li>Nossos Diferenciais</li>
-          </a>
-          <a href="#team">
-            <li>Quem Somos</li>
-          </a>
-          <a href="#testimonies">
-            <li>Depoimentos</li>
-          </a>
-        </ul>
+      <i class="fas fa-phone-alt"></i>
+      <div class="phone-number">
+        <span class="location">Brasília Shppping</span>
+        <a class="number" href="tel:+55-61-3327-0523">(61) 3327-0523</a>
+      </div>
+      <div class="phone-number">
+        <span class="location">Taguatinga</span>
+        <a class="number" href="tel:+55-61-3352-5735">(61) 3352-5735</a>
       </div>
     </nav>
 
@@ -109,27 +94,27 @@ $isHomepage = true;
 
       <div class="stars">
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star1 ?>"></div>
           <span><?= $introducao->data->star1 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star2 ?>"></div>
           <span><?= $introducao->data->star2 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star3 ?>"></div>
           <span><?= $introducao->data->star3 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star4 ?>"></div>
           <span><?= $introducao->data->star4 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star5 ?>"></div>
           <span><?= $introducao->data->star5 ?></span>
         </div>
         <div class="star">
-          <div class="star-icon"><img src="/public/images/star.png" alt=""></div>
+          <div class="star-icon"><img src="/public/images/star.png" alt="<?= $introducao->data->star6 ?>"></div>
           <span><?= $introducao->data->star6 ?></span>
         </div>
       </div>
@@ -139,26 +124,35 @@ $isHomepage = true;
           <div class="form">
             <input type="text" id="name1" name="name" placeholder="Nome">
             <input type="text" id="phone1" name="phone" placeholder="Whatsapp">
-            <input type="text" id="treatment1" name="treatment" placeholder="Tratamento">
+            <select id="treatment1" name="treatment" placeholder="Tratamento">
+              <option value="">Tratamentos</option>
+              <option value="restauração">Restauração</option>
+              <option value="preventivo odontológico">Preventivo Odontológico</option>
+              <option value="clínica odontológica">Clínica Odontológica</option>
+              <option value="limpeza">Limpeza</option>
+              <?php foreach ($tratamentos as $treatment): ?>
+                <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
+              <?php endforeach ?>
+            </select>
             <button id="1">ENVIAR</button>
           </div>
       </div>
 
       <div class="compliments">
         <div class="compliment">
-          <div class="compliment-icon"><img src="/public/images/melhores-profissionais.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/melhores-profissionais.png" alt="Os Melhores Profissionais"></div>
           <span>Os Melhores Profissionais</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/public/images/tecnologia-de-ponta.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/tecnologia-de-ponta.png" alt="Tecnologia de Ponta"></div>
           <span>Tecnologia de Ponta</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/public/images/tratamento-personalizado.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/tratamento-personalizado.png" alt="Tratamento Personalizado"></div>
           <span>Tratamento Personalizado</span>
         </div>
         <div class="compliment">
-          <div class="compliment-icon"><img src="/public/images/melhor-localizacaoo.png" alt=""></div>
+          <div class="compliment-icon"><img src="/public/images/melhor-localizacao.png" alt="Melhor Localização"></div>
           <span>Melhor Localização</span>
         </div>
       </div>
@@ -211,25 +205,25 @@ $isHomepage = true;
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/public/images/location.png" alt="">
+            <img src="/public/images/location.png" alt="Localização privilegiada no coração de Brasília e Taguatinga!">
           </div>
           <span>Localização privilegiada no coração de Brasília e Taguatinga!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/public/images/shield.png" alt="">
+            <img src="/public/images/shield.png" alt="Transparência, confiança e eficiência. Há 31 anos transformando sorrisos!">
           </div>
           <span>Transparência, confiança e eficiência. Há 31 anos transformando sorrisos!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/public/images/heart.png" alt="">
+            <img src="/public/images/heart.png" alt="Atendimento humanizado e personalizado!">
           </div>
           <span>Atendimento humanizado e personalizado!</span>
         </div>
         <div class="item">
           <div class="icon">
-            <img src="/public/images/tech.png" alt="">
+            <img src="/public/images/tech.png" alt="Tecnologia de ponta!">
           </div>
           <span>Tecnologia de ponta!</span>
         </div>
@@ -238,7 +232,16 @@ $isHomepage = true;
         <h2>Agende sua avaliação com a nossa equipe!</h2>
         <input type="text" id="name2" name="name" placeholder="Nome">
         <input type="text" id="phone2" name="phone" placeholder="Whatsapp">
-        <input type="text" id="treatment2" name="treatment" placeholder="Tratamento">
+        <select id="treatment2" name="treatment" placeholder="Tratamento">
+          <option value="">Tratamentos</option>
+          <option value="restauração">Restauração</option>
+          <option value="preventivo odontológico">Preventivo Odontológico</option>
+          <option value="clínica odontológica">Clínica Odontológica</option>
+          <option value="limpeza">Limpeza</option>
+          <?php foreach ($tratamentos as $treatment): ?>
+            <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
+          <?php endforeach ?>
+        </select>
         <button id="2">ENVIAR</button>
       </div>
     </section>
@@ -249,7 +252,7 @@ $isHomepage = true;
       <div class="members">
         <div class="member">
           <div class="image">
-            <img src="/public/images/jessica.jpg" alt="">
+            <img src="/public/images/jessica.jpg" alt="Odontopediatra">
           </div>
           <span>
             Dra. Jéssica Campos<br>
@@ -259,7 +262,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/bruno.jpg" alt="">
+            <img src="/public/images/bruno.jpg" alt="Estética Facial e do Sorriso">
           </div>
           <span>
             Dr. Bruno Franzão<br>
@@ -269,7 +272,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/Mylene.png" alt="">
+            <img src="/public/images/Mylene.png" alt="Clínica Geral">
           </div>
           <span>
             Dra. Mylene Monteiro<br>
@@ -279,7 +282,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/antonio.jpg" alt="">
+            <img src="/public/images/antonio.jpg" alt="Implantodontia e Periodontia">
           </div>
           <span>
             Dr. Antônio Carlos<br>
@@ -289,7 +292,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/paulo.jpg" alt="">
+            <img src="/public/images/paulo.jpg" alt="Ortodontista">
           </div>
           <span>
             Dr. Paulo Nagata<br>
@@ -299,7 +302,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/claudia.jpg" alt="">
+            <img src="/public/images/claudia.jpg" alt="Ortodontista">
           </div>
           <span>
             Dra. Cláudia Honda<br>
@@ -309,7 +312,7 @@ $isHomepage = true;
         </div>
         <div class="member">
           <div class="image">
-            <img src="/public/images/claudio.jpg" alt="">
+            <img src="/public/images/claudio.jpg" alt="Ortodontista">
           </div>
           <span>
             Dr. Claudio Sesso<br>
@@ -371,7 +374,16 @@ $isHomepage = true;
             <div class="form">
               <input type="text" id="name3" name="name" placeholder="Nome">
               <input type="text" id="phone3" name="phone" placeholder="Whatsapp">
-              <input type="text" id="treatment3" name="treatment" placeholder="Tratamento">
+              <select id="treatment3" name="treatment" placeholder="Tratamento">
+                <option value="">Tratamentos</option>
+                <option value="restauração">Restauração</option>
+                <option value="preventivo odontológico">Preventivo Odontológico</option>
+                <option value="clínica odontológica">Clínica Odontológica</option>
+                <option value="limpeza">Limpeza</option>
+                <?php foreach ($tratamentos as $treatment): ?>
+                  <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
+                <?php endforeach ?>
+              </select>
               <button id="3">ENVIAR</button>
             </div>
         </div>
