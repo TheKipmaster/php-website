@@ -211,8 +211,8 @@ nav {
     line-height: 1.5em;
     border-radius: 20px 20px 0 0; }
     .signboard .sign .neon {
-      color: #427bbd;
-      text-shadow: 0 0 10px #427bbd, 0 0 21px #427bbd; }
+      color: #739ece;
+      text-shadow: 0 0 10px #739ece, 0 0 21px #739ece; }
 
 .call-to-action {
   display: flex;
@@ -222,10 +222,10 @@ nav {
   margin-top: 2em;
   width: 100%; }
   .call-to-action .callout {
-    color: #427bbd;
+    color: #739ece;
     text-align: center;
     font-size: 1.5em;
-    text-shadow: 0 0 10px #427bbd, 0 0 21px #427bbd;
+    text-shadow: 0 0 10px #739ece, 0 0 21px #739ece;
     background-color: #545454;
     border-radius: 20px 20px 0 0;
     width: fit-content;
@@ -440,11 +440,11 @@ nav {
     margin-top: 2em; }
     .team .container .callout {
       background-color: #37659B;
-      color: #00ad4b;
+      color: #00e061;
       font-size: 1.5em;
       padding: 0 2em;
       border-radius: 15px 15px 0 0;
-      text-shadow: 0 0 10px #00ad4b, 0 0 21px #00ad4b; }
+      text-shadow: 0 0 10px #00e061, 0 0 21px #00e061; }
 
 .testimonies {
   background-color: #E5E9ED;

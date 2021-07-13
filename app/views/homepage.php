@@ -34,12 +34,12 @@ $isHomepage = true;
     <!-- <link href="/stylesheets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href="/public/stylesheets/style.css" /> -->
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
     <!-- Carousel styles -->
     <link rel="stylesheet" href="/public/javascript/flickity.min.css">
 
     <!-- Minified CSS -->
-    <link rel="stylesheet" href="/public/stylesheets/style.min.css" />
+    <!-- <link rel="stylesheet" href="/public/stylesheets/style.min.css" /> -->
 
     <!-- Page Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="/public/images/logo-icone.png" />
@@ -126,10 +126,6 @@ $isHomepage = true;
             <input type="text" id="phone1" name="phone" placeholder="Whatsapp">
             <select id="treatment1" name="treatment" placeholder="Tratamento">
               <option value="">Tratamentos</option>
-              <option value="restauração">Restauração</option>
-              <option value="preventivo odontológico">Preventivo Odontológico</option>
-              <option value="clínica odontológica">Clínica Odontológica</option>
-              <option value="limpeza">Limpeza</option>
               <?php foreach ($tratamentos as $treatment): ?>
                 <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
               <?php endforeach ?>
@@ -234,10 +230,6 @@ $isHomepage = true;
         <input type="text" id="phone2" name="phone" placeholder="Whatsapp">
         <select id="treatment2" name="treatment" placeholder="Tratamento">
           <option value="">Tratamentos</option>
-          <option value="restauração">Restauração</option>
-          <option value="preventivo odontológico">Preventivo Odontológico</option>
-          <option value="clínica odontológica">Clínica Odontológica</option>
-          <option value="limpeza">Limpeza</option>
           <?php foreach ($tratamentos as $treatment): ?>
             <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
           <?php endforeach ?>
@@ -349,19 +341,19 @@ $isHomepage = true;
 
       <div class="gallery js-flickity">
         <a href="" class="gallery-cell">
-          <img src="/public/images/claudia.jpeg" alt="Invisalign"></img>
+          <img src="/public/images/claudia.jpeg" alt=""></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/public/images/rodrigo.jpeg" alt="odontopediatria"></img>
+          <img src="/public/images/rodrigo.jpeg" alt=""></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/public/images/leidiane.jpeg" alt="Aparelhos Transparentes"></img>
+          <img src="/public/images/leidiane.jpeg" alt=""></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/public/images/leticia.jpeg" alt="Restaurações Estéticas"></img>
+          <img src="/public/images/leticia.jpeg" alt=""></img>
         </a>
         <a href="" class="gallery-cell">
-          <img src="/public/images/magda.jpeg" alt="Restaurações Estéticas"></img>
+          <img src="/public/images/magda.jpeg" alt=""></img>
         </a>
       </div>
 
@@ -376,10 +368,6 @@ $isHomepage = true;
               <input type="text" id="phone3" name="phone" placeholder="Whatsapp">
               <select id="treatment3" name="treatment" placeholder="Tratamento">
                 <option value="">Tratamentos</option>
-                <option value="restauração">Restauração</option>
-                <option value="preventivo odontológico">Preventivo Odontológico</option>
-                <option value="clínica odontológica">Clínica Odontológica</option>
-                <option value="limpeza">Limpeza</option>
                 <?php foreach ($tratamentos as $treatment): ?>
                   <option value="<?= RichText::asText($treatment->data->name) ?>"><?= RichText::asText($treatment->data->name) ?></option>
                 <?php endforeach ?>
